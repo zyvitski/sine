@@ -8,7 +8,6 @@ namespace implementation{
 	constexpr bool is_within(T const& value, T const& minimum, T const& maximum){
 		return (value >= minimum && value <= maximum);
 	}
-
 }
 constexpr inline double constrain(double const& value, double const& minimum, double const& maximum){
 	return implementation::is_within(value,minimum,maximum) ? value : constrain(value - ((sign(value) * (maximum - minimum))), minimum,maximum);

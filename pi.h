@@ -1,4 +1,4 @@
-	//
+//
 //  pi.h
 //  Audio_Library
 //
@@ -8,7 +8,7 @@
 
 #ifndef Audio_Library_pi_h
 #define Audio_Library_pi_h
-/*
+
 #if __cplusplus == 201402L
 
 namespace implementation {
@@ -18,11 +18,11 @@ namespace implementation {
 	#define pi     implementation::_pi<double>
 	#define two_pi implementation::_two_pi<double>
 #else
-*/
+
 	#define pi     3.14159265358979323846264338327
 	#define two_pi 6.28318530717958647692528676656
 
-//#endif
+#endif
 
 
 #endif

@@ -18,5 +18,6 @@
 #include "taylor.h"
 #include "sine.h"
 #include "constrain.h"
+#include "bhaskara.h"
 
 #endif
