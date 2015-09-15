@@ -83,20 +83,27 @@
             constexpr inline void sinc_implementation<1>(implementation::sinc_data<double>& data){
                 data.result+=1.0;
             }
-        
     }
 
 namespace taylor{
     template <unsigned N>
     constexpr double sine(double const& x) {
-        implementation::sine_data<double> data(constrain(x,0,two_pi));
+        double _x = x;
+        _x-=half_pi;
+        _x = constrain(_x, -pi, pi);
+        _x = abs(_x);
+        _x-=half_pi;
+        implementation::sine_data<double> data(_x);
         implementation::sine_implementation<N>(data);
-        return data.result;
+        return -data.result;
     }
     
     template <unsigned N>
     constexpr double cosine(double const& x) {
-        implementation::cosine_data<double> data(constrain(x,0,two_pi));
+        double _x = x;
+        _x = constrain(_x, -pi, pi);
+        _x = abs(_x);
+        implementation::cosine_data<double> data(_x);
         implementation::cosine_implementation<N>(data);
         return data.result;
     }

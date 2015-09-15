@@ -2,6 +2,8 @@
 #define __constrain_h__
 
 #include "sign.h"
+#include "abs.h"
+#include "pi.h"
 
 namespace implementation{
 	template<typename T>
@@ -12,4 +14,5 @@ namespace implementation{
 constexpr inline double constrain(double const& value, double const& minimum, double const& maximum){
 	return implementation::is_within(value,minimum,maximum) ? value : constrain(value - ((sign(value) * (maximum - minimum))), minimum,maximum);
 }
+
 #endif
